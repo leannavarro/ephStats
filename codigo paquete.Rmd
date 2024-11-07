@@ -1,0 +1,60 @@
+---
+title: "Untitled"
+author: "Leandro Navarro"
+date: "2024-11-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(pacman)
+p_load(devtools,usethis,roxygen2, eph, tidyverse,DescTools,weights,srvyr,Hmisc)
+options(scipen = 99)
+```
+
+## Generar documentación
+```{r}
+library(devtools)
+document()
+
+```
+## Instalacion
+```{r}
+install()
+
+```
+
+```{r}
+devtools::load_all("C:/Users/Leandro Navarro/Desktop/paqueteR/ephStats")
+```
+
+
+```{r}
+library(ephStats)
+p_load(eph, tidyverse,gt,survey)
+
+eph24_1<-get_microdata(year = 2024, period = 1, type = "individual")
+
+eph24_1$CH10 <- as.factor(eph24_1$CH10)
+eph24_1$CH04 <- as.factor(eph24_1$CH04)
+
+calculate_cor(data = eph24_1, var1 = "CH10", var2 = "CH04", peso = "PONDERA", method = "chisquare")
+calculate_cor(data = eph24_1, var1 = "CH10", var2 = "CH04", peso = "PONDERA", method = "cramer")
+
+
+str(eph24_1$IPCF)
+str(eph24_1$CH06)
+eph24_1$IPCF <- as.numeric(eph24_1$IPCF)
+eph24_1$CH06 <- as.numeric(eph24_1$CH06)
+
+
+calculate_cor(data = eph24_1, var1 = "CH06", var2 = "IPCF", peso = "PONDERA", method = "r2")
+
+calculate_cor(data = eph24_1, var1 = "CH06", var2 = "IPCF", peso = "PONDERA", method = "pearson")
+
+
+```
+

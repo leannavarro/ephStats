@@ -1,0 +1,17 @@
+Package: ephStats
+Title: Herramientas para trabajar con datos ponderados de la EPH
+Version: 0.1.0
+Authors@R: c(person("Leandro", "Navarro", , "leandronavarro.ln@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8297-9942")))
+Description: Paquete para calcular estadísticas como Chi-cuadrado, V de Cramer, Pearson y R² ponderados con datos de encuesta.
+License: MIT
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+LazyData: true
+Imports:
+    dplyr,
+    srvyr,
+    survey,
+    tibble,
+    purrr
