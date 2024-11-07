@@ -15,3 +15,5 @@ Imports:
     survey,
     tibble,
     purrr
+URL: https://github.com/leannavarro/ephStats
+BugReports: https://github.com/leannavarro/ephStats/issues
